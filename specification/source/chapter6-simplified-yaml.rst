@@ -356,11 +356,11 @@ Represents the followig dts:
   / {
 
           definitions {
-                  openamp-channel-0-access-srams = "[{\"dev\": \"psu_r5_0_atcm_global\"}, {\"dev\": \"psu_r5_0_btcm_global\"}]";
-                  openamp-channel-1-access-srams = "[{\"dev\": \"psu_r5_1_atcm_global\"}]";
+                  openamp-channel-0-access-srams = [{"dev": "psu_r5_0_atcm_global"}, {"dev": "psu_r5_0_btcm_global"}];
+                  openamp-channel-1-access-srams = [{"dev": "psu_r5_1_atcm_global"}];
 
                   OpenAMP {
-                          rproc_reserved0 = "[{\"ranges\": 1, \"start\": 1053818880, \"size\": 262144, \"no-map\": 1}]";
+                          rproc_reserved0 = [{"ranges": 1, "start": 1053818880, "size": 262144, "no-map": 1}];
                   };
           };
 
@@ -368,8 +368,8 @@ Represents the followig dts:
 
                   openamp_a72_0_cluster {
                           compatible = "openamp,domain-v1";
-                          cpus = "[{\"cluster\": \"cpus-a72@0\", \"cpumask\": 1, \"mode\": {\"secure\": true, \"el\": 3}}]";
-                          channels = "[{\"dev\": \"bar0\"}, {\"dev\": \"psu_r5_0_atcm_global\"}, {\"dev\": \"psu_r5_0_btcm_global\"}, {\"dev\": \"psu_r5_1_atcm_global\"}]";
+                          cpus = [{"cluster": "cpus-a72@0", "cpumask": 1, "mode": {"secure": true, "el": 3}}];
+                          channels = [{"dev": "bar0"}, {"dev": "psu_r5_0_atcm_global"}, {"dev": "psu_r5_0_btcm_global"}, {"dev": "psu_r5_1_atcm_global"}];
 
                           reserved-memory {
                                   ranges = <0x1>;
